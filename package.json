@@ -1,0 +1,39 @@
+{
+  "name": "clapet",
+  "version": "0.1.0",
+  "description": "Clapet - a Claude desktop pet",
+  "author": "S1sTeam",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron .",
+    "build": "electron-builder"
+  },
+  "build": {
+    "appId": "com.clapet.app",
+    "productName": "Clapet",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "src/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.png"
+    },
+    "nsis": {
+      "oneClick": true,
+      "artifactName": "${productName}-${version}-setup.exe"
+    }
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^26.15.3"
+  },
+  "dependencies": {
+    "keyspy": "^1.1.1"
+  }
+}
